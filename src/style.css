@@ -1,0 +1,36 @@
+body {
+  font-family: Merriweather;
+  background-color: #88668a;
+}
+
+.weather-app {
+  background: #9d90ad;
+  max-width: 700px;
+  padding: 12px;
+  margin: 35px auto;
+  font-size: 14px;
+  height: 36px;
+}
+
+.search-input {
+  width: 80%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+}
+.search-button {
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  background: white;
+}
+.weather-data {
+  display: flex;
+  justify-content: space-between;
+}
+footer {
+  font-size: 10px;
+  text-align: center;
+}
