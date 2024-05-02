@@ -44,7 +44,7 @@ function dateFormat(date) {
 }
 function searchCity(city) {
   let apiKey = "a134o76ctfb4c467b6101566d6a54944";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(cityWeather);
 }
 
@@ -57,13 +57,13 @@ function search(event) {
 
 function dayFormat(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  let day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   return day[date.getDay()];
 }
 function freshForecast(city) {
   let apiKey = "a134o76ctfb4c467b6101566d6a54944";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metrics`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(showForecast);
 }
 
@@ -71,20 +71,20 @@ function showForecast(response) {
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
-    if (index <= 5) {
+    if (index < 4) {
       forecastHtml =
         forecastHtml +
         `<div class="weather-forecast-day">
         <div class="weather-forecast-date">${dayFormat(day.time)}</div>
 
-        <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
-        <div class="weather-forecast-temperatures">
-          <div class="weather-forecast-temperature">
-            <strong>${Math.round(day.temperature.maximum)}º</strong>
-          </div>
-          <div class="weather-forecast-temperature">${Math.round(
+        <img src="${day.condition.icon_url}" class="forecast-icon" />
+        <div class="forecast-temperatures">
+          <span class="forecast-temp-max">
+            <strong>${Math.round(day.temperature.maximum)}℃</strong>
+          </span>
+          <span class="forecast-temp-min">${Math.round(
             day.temperature.minimum
-          )}º</div>
+          )}℃</span>
         </div>
       </div>
     `;

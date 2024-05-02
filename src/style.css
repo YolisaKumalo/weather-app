@@ -5,21 +5,22 @@ body {
 
 .weather-app {
   background: #9d90ad;
-  max-width: 700px;
-  padding: 15px 20px;
-  margin: 35px auto;
+  max-width: 650px;
+  padding: 45px 20px;
+  margin: 40px auto;
   font-size: 14px;
+  height: 450px;
 }
 
 .search-input {
   width: 82%;
-  padding: 15px 20px;
+  padding: 21px 20px;
   border: none;
   border-radius: 12px;
   background: white;
 }
 .search-button {
-  padding: 14px 20px;
+  padding: 20px 20px;
   border-radius: 12px;
   border: none;
   color: black;
@@ -30,15 +31,32 @@ body {
 .weather-data {
   display: flex;
   justify-content: space-between;
+  padding: 0 20px 0 0;
 }
 .weather-temperature-data {
-  font-size: 34px;
+  font-size: 20px;
+}
+.weather-temperature {
+  position: absolute;
 }
 
 footer {
   font-size: 10px;
   text-align: center;
+  padding: 120px 0 0 0;
 }
-.weather-forecast-day {
-  color: black;
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+}
+.forecast-temp-min {
+  color: #421c58;
+}
+.forecst-icon {
+  position: relative;
+  top: -10px;
+}
+.forecast-weather-day {
+  border: 2px;
+  border-style: double;
 }
